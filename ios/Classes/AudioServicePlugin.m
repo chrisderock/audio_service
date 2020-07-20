@@ -375,11 +375,11 @@ static MPMediaItemArtwork* artwork = nil;
   NSMutableDictionary *nowPlayingInfo = [NSMutableDictionary new];
   if (mediaItem) {
     nowPlayingInfo[MPMediaItemPropertyTitle] = mediaItem[@"title"];
-    nowPlayingInfo[kMRMediaRemoteNowPlayingInfoTitle] = mediaItem[@"title"];
+    nowPlayingInfo["kMRMediaRemoteNowPlayingInfoTitle"] = mediaItem[@"title"];
     nowPlayingInfo[MPMediaItemPropertyAlbumTitle] = mediaItem[@"album"];
     if (mediaItem[@"artist"] != [NSNull null]) {
       nowPlayingInfo[MPMediaItemPropertyArtist] = mediaItem[@"artist"];
-      nowPlayingInfo[kMRMediaRemoteNowPlayingInfoArtist] = mediaItem[@"artist"];
+      nowPlayingInfo["kMRMediaRemoteNowPlayingInfoArtist"] = mediaItem[@"artist"];
     }
     if (mediaItem[@"duration"] != [NSNull null]) {
       nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = [NSNumber numberWithLongLong: ([mediaItem[@"duration"] longLongValue] / 1000)];
